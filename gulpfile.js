@@ -4,13 +4,14 @@ var sass = require('gulp-sass');
 var autoprefixer = require('gulp-autoprefixer');
 var sourcemaps = require('gulp-sourcemaps');
 var open = require('gulp-open');
+var browserSync = require('browser-sync').create();
 
 var Paths = {
   HERE: './',
   DIST: 'dist/',
-  CSS: './assets/css/',
-  SCSS_TOOLKIT_SOURCES: './assets/scss/paper-dashboard.scss',
-  SCSS: './assets/scss/**/**'
+  CSS: './app/assets/css/',
+  SCSS_TOOLKIT_SOURCES: './app/assets/scss/paper-dashboard.scss',
+  SCSS: './app/assets/scss/**/**'
 };
 
 gulp.task('browserSync', function() {
@@ -35,7 +36,7 @@ gulp.task('compile-scss', function() {
 });
 
 gulp.task('open', function() {
-  gulp.src('examples/dashboard.html')
+  gulp.src('app/dashboard.html')
     .pipe(open());
 });
 
@@ -45,6 +46,6 @@ gulp.task('open-app', ['open', 'watch']);
 gulp.task('watch', ['browserSync', 'compile-scss'], function (){
   gulp.watch(Paths.SCSS, ['compile-scss']);
   // Reloads the browser whenever HTML or JS files change
-  gulp.watch('./app/**/*.html', browserSync.reload); 
-  gulp.watch('./assets/js/**/*.js', browserSync.reload); 
+  gulp.watch('./app/*.html', browserSync.reload); 
+  gulp.watch('./app/assets/js/**/*.js', browserSync.reload); 
 });
