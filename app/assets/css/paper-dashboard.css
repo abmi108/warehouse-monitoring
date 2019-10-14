@@ -998,6 +998,9 @@ fieldset[disabled]
 .no-caret.dropdown-toggle::after {
   display: none; }
 
+.btn-update {
+  margin-top: 25px !important; }
+
 ::-moz-placeholder {
   color: #9A9A9A; }
 
@@ -3156,13 +3159,13 @@ License - nucleoapp.com/license/
   .sidebar .logo,
   .off-canvas-sidebar .logo {
     position: relative;
-    padding: 7px 0.7rem;
+    padding: 17px 0.7rem;
     z-index: 4; }
     .sidebar .logo a.logo-mini,
     .off-canvas-sidebar .logo a.logo-mini {
       opacity: 1;
       float: left;
-      width: 34px;
+      width: 50px;
       text-align: center;
       margin-left: 10px;
       margin-right: 12px; }
