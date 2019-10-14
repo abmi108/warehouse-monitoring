@@ -187,3 +187,7 @@
   outline: none;
   display: none;
 }
+
+.login-page {
+  background-image: url("../img/warehouse.jpg");
+}
